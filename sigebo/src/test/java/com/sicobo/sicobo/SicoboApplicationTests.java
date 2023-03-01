@@ -1,10 +1,10 @@
-package com.sigebo.sigebo;
+package com.sicobo.sicobo;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class SigeboApplicationTests {
+class SicoboApplicationTests {
 
 	@Test
 	void contextLoads() {

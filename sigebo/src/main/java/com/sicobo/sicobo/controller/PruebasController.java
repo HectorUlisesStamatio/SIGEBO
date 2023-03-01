@@ -1,4 +1,4 @@
-package com.sigebo.sigebo.controller;
+package com.sicobo.sicobo.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
