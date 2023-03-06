@@ -4,29 +4,47 @@ import jakarta.persistence.*;
 import lombok.Data;
 
 import java.time.LocalDateTime;
-import java.util.Date;
 
 @Data
 @Entity
-public class Payment {
+public class BeanUser {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    private Double amount;
+    private String name;
 
-    private int amountMonths;
+    private String lastname;
 
-    private Date paymentDate;
+    private String surname;
 
-    private Date dueDate;
+    private String email;
 
-    private boolean status;
+    private String rfc;
+
+    private String phone_number;
+
+    private String username;
+
+    private String password;
+
+    @Enumerated(EnumType.STRING)
+    private Rol role;
+
+    private int number_attempts;
+
+    private boolean policy_acceptance;
 
     private LocalDateTime fechaCreacion;
 
     @Column(name = "fecha_act")
     private LocalDateTime fechaActualizacion;
+
+    public enum Rol {
+        ADMIN,
+        GESTOR,
+        USUARIO
+    }
 
     @PrePersist
     private void prePersist(){
@@ -37,5 +55,6 @@ public class Payment {
     private void preUpdate(){
         this.fechaActualizacion = LocalDateTime.now();
     }
+
 
 }

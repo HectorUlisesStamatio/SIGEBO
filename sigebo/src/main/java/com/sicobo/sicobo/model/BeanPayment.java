@@ -4,15 +4,22 @@ import jakarta.persistence.*;
 import lombok.Data;
 
 import java.time.LocalDateTime;
+import java.util.Date;
 
 @Data
 @Entity
-public class Policies {
+public class BeanPayment {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    private String description;
+    private Double amount;
+
+    private int amountMonths;
+
+    private Date paymentDate;
+
+    private Date dueDate;
 
     private boolean status;
 

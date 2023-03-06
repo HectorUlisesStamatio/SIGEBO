@@ -12,9 +12,7 @@
             <h2 id="descripcion">Descripcion del error.</h2>
             <a class="btn" th:href="@{/}">Volver al inicio</a>
             <img src="./img/500.svg" class="img-fluid py-5" alt="Imagen de error">
-            <div class="credits">
-                © SICOBO. Todos los derechos reservados.
-            </div>
+            <div th:insert="~{layout/extras/credits :: credits}"></div>
         </section>
 
     </div>
