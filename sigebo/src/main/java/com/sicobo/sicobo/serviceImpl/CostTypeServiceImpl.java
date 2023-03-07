@@ -1,6 +1,7 @@
 package com.sicobo.sicobo.serviceImpl;
 
 import com.sicobo.sicobo.dao.DaoCostType;
+import com.sicobo.sicobo.dto.DTOCostType;
 import com.sicobo.sicobo.model.BeanCostType;
 import com.sicobo.sicobo.service.ICostTypeService;
 import jakarta.persistence.EntityNotFoundException;
@@ -16,14 +17,15 @@ public class CostTypeServiceImpl implements ICostTypeService {
 
     @Override
     @Transactional(readOnly = true)
-    public List<BeanCostType> listarCostos() {
+    public List<BeanCostType> listar() {
         return daoCostType.findAll();
     }
 
     @Override
     @Transactional
-    public void guardar(BeanCostType beanCostType) {
-         daoCostType.save(beanCostType);
+    public void guardar(DTOCostType dtoCostType) {
+        BeanCostType a = new BeanCostType();
+         daoCostType.save(a);
     }
 
     @Override
