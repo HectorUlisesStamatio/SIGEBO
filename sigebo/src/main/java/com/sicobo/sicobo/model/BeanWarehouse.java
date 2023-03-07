@@ -1,5 +1,6 @@
 package com.sicobo.sicobo.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import jakarta.persistence.*;
 import lombok.Data;
 
@@ -7,6 +8,7 @@ import java.time.LocalDateTime;
 
 @Data
 @Entity
+@Table(name = "warehouse")
 public class BeanWarehouse {
 
     @Id
@@ -20,6 +22,17 @@ public class BeanWarehouse {
     private Double finalCost;
 
     private boolean status;
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JsonIgnoreProperties({"hibernateLazyInitializer","handler"})
+    @JoinColumn(name = "site_id_site")
+    private BeanSite beanSite;
+
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JsonIgnoreProperties({"hibernateLazyInitializer","handler"})
+    @JoinColumn(name = "warehouses_types")
+    private BeanWarehousesType warehousesType;
 
     private LocalDateTime fechaCreacion;
 

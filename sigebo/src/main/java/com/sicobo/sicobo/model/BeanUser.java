@@ -35,6 +35,9 @@ public class BeanUser {
 
     private boolean policy_acceptance;
 
+    private boolean status;
+
+
     private LocalDateTime fechaCreacion;
 
     @Column(name = "fecha_act")

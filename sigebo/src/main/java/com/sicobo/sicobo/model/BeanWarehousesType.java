@@ -7,13 +7,19 @@ import java.time.LocalDateTime;
 
 @Data
 @Entity
+@Table(name = "warehouses_type")
 public class BeanWarehousesType {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id")
     private Long id;
 
     private String description;
 
+/*
+    @OneToOne(mappedBy = "warehouses_type")
+    private BeanCostType beanCostType;
+*/
     private LocalDateTime fechaCreacion;
 
     @Column(name = "fecha_act")

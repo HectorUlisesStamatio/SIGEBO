@@ -21,6 +21,8 @@ public class DTOUser {
 
     private String phone_number;
 
+    private boolean status;
+
     @NotBlank(message = "El campo no puede estar vacío")
     private String username;
 
