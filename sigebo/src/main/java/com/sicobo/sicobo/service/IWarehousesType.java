@@ -1,16 +1,21 @@
 package com.sicobo.sicobo.service;
 
+import com.sicobo.sicobo.dto.DTOWarehouse;
 import com.sicobo.sicobo.dto.DTOWarehousesType;
+import com.sicobo.sicobo.model.BeanWarehouse;
 import com.sicobo.sicobo.model.BeanWarehousesType;
+import org.springframework.http.ResponseEntity;
 
 import java.util.List;
 
 public interface IWarehousesType {
-    public List<BeanWarehousesType> listar();
+    public ResponseEntity<Object> listar();
 
-    public void guardar(DTOWarehousesType dtoWarehousesType);
+    public ResponseEntity<Object> guardar(DTOWarehousesType dtoWarehousesType);
 
-    public void eliminar(BeanWarehousesType beanWarehousesType);
+    public ResponseEntity<Object> editar(DTOWarehousesType dtoWarehousesType);
 
-    public BeanWarehousesType encontrarPersona(BeanWarehousesType beanWarehousesType);
+    public ResponseEntity<Object> eliminar(BeanWarehousesType beanWarehousesType);
+
+    public ResponseEntity<Object> buscar(Long id);
 }

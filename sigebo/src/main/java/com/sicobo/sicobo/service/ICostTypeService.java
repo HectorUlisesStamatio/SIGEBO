@@ -2,16 +2,18 @@ package com.sicobo.sicobo.service;
 
 import com.sicobo.sicobo.dto.DTOCostType;
 import com.sicobo.sicobo.model.BeanCostType;
+import org.springframework.http.ResponseEntity;
 
-import java.util.List;
 
 public interface ICostTypeService {
 
-    public List<BeanCostType> listar();
+    public ResponseEntity<Object> listar();
 
-    public void guardar(DTOCostType dtoCostType);
+    public ResponseEntity<Object> guardar(DTOCostType dtoCostType);
 
-    public void eliminar(BeanCostType beanCostType);
+    public ResponseEntity<Object> editar(DTOCostType dtoCostType);
 
-    public BeanCostType encontrarPersona(BeanCostType beanCostType);
+    public ResponseEntity<Object> eliminar(BeanCostType beanCostType);
+
+    public ResponseEntity<Object> buscar(Long id);
 }

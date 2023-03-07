@@ -2,15 +2,16 @@ package com.sicobo.sicobo.service;
 
 import com.sicobo.sicobo.dto.DTOWarehouseImage;
 import com.sicobo.sicobo.model.BeanWarehouseImage;
-
-import java.util.List;
+import org.springframework.http.ResponseEntity;
 
 public interface IWarehouseImageService {
-    public List<BeanWarehouseImage> listar();
+    public ResponseEntity<Object> listar();
 
-    public void guardar(DTOWarehouseImage dtoWarehouseImage);
+    public ResponseEntity<Object> guardar(DTOWarehouseImage dtoWarehouseImage);
 
-    public void eliminar(BeanWarehouseImage beanWarehouseImage);
+    public ResponseEntity<Object> editar(DTOWarehouseImage dtoWarehouseImage);
 
-    public BeanWarehouseImage encontrarPersona(BeanWarehouseImage beanWarehouseImage);
+    public ResponseEntity<Object> eliminar(BeanWarehouseImage beanWarehouseImage);
+
+    public ResponseEntity<Object> buscar(Long id);
 }

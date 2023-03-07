@@ -10,33 +10,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
-public class UserServiceImpl implements IUserService {
+public class UserServiceImpl {
 
-    @Autowired
-    private DaoUser daoUser;
 
-    @Override
-    @Transactional(readOnly = true)
-    public List<BeanUser> listar() {
-        return daoUser.findAll();
-    }
-
-    @Override
-    @Transactional
-    public void guardar(DTOUser dtoUser) {
-        BeanUser u = new BeanUser();
-        daoUser.save(u);
-    }
-
-    @Override
-    @Transactional
-    public void eliminar(BeanUser beanUser) {
-        daoUser.delete(beanUser);
-    }
-
-    @Override
-    @Transactional(readOnly = true)
-    public BeanUser encontrarPersona(BeanUser beanUser) {
-        return daoUser.findById(beanUser.getId()).orElseThrow(EntityNotFoundException::new);
-    }
 }

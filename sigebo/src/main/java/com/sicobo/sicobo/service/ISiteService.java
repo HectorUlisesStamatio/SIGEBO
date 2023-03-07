@@ -2,15 +2,18 @@ package com.sicobo.sicobo.service;
 
 import com.sicobo.sicobo.dto.DTOSite;
 import com.sicobo.sicobo.model.BeanSite;
+import org.springframework.http.ResponseEntity;
 
 import java.util.List;
 
 public interface ISiteService {
-    public List<BeanSite> listar();
+    public ResponseEntity<Object> listar();
 
-    public void guardar(DTOSite dtoSite);
+    public ResponseEntity<Object> guardar(DTOSite dtoSite);
 
-    public void eliminar(BeanSite beanSite);
+    public ResponseEntity<Object> editar(DTOSite dtoSite);
 
-    public BeanSite encontrarPersona(BeanSite beanSite);
+    public ResponseEntity<Object> eliminar(BeanSite beanSite);
+
+    public ResponseEntity<Object> buscar(Long id);
 }

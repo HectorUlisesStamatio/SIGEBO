@@ -2,15 +2,18 @@ package com.sicobo.sicobo.service;
 
 import com.sicobo.sicobo.dto.DTOState;
 import com.sicobo.sicobo.model.BeanState;
+import org.springframework.http.ResponseEntity;
 
 import java.util.List;
 
 public interface IStateService {
-    public List<BeanState> listar();
+    public ResponseEntity<Object> listar();
 
-    public void guardar(DTOState dtoState);
+    public ResponseEntity<Object> guardar(DTOState dtoState);
 
-    public void eliminar(BeanState beanState);
+    public ResponseEntity<Object> editar(DTOState dtoState);
 
-    public BeanState encontrarPersona(BeanState beanState);
+    public ResponseEntity<Object> eliminar(BeanState beanState);
+
+    public ResponseEntity<Object> buscar(Long id);
 }

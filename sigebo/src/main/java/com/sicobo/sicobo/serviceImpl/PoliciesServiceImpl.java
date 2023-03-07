@@ -10,32 +10,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
-public class PoliciesServiceImpl implements IPoliciesService {
+public class PoliciesServiceImpl   {
 
-    @Autowired
-    private DaoPolicies daoPolicies;
 
-    @Override
-    @Transactional(readOnly = true)
-    public List<BeanPolicies> listar() {
-        return daoPolicies.findAll();
-    }
-
-    @Override
-    @Transactional
-    public void guardar(DTOPolicies dtoPolicies) {
-        BeanPolicies p = new BeanPolicies();
-        daoPolicies.save(p);
-    }
-
-    @Override
-    public void eliminar(BeanPolicies beanPolicies) {
-        daoPolicies.delete(beanPolicies);
-    }
-
-    @Override
-    @Transactional(readOnly = true)
-    public BeanPolicies encontrarPersona(BeanPolicies beanPolicies) {
-        return daoPolicies.findById(beanPolicies.getId()).orElseThrow(EntityNotFoundException::new);
-    }
 }

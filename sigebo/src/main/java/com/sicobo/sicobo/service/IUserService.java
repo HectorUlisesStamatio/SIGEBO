@@ -2,15 +2,16 @@ package com.sicobo.sicobo.service;
 
 import com.sicobo.sicobo.dto.DTOUser;
 import com.sicobo.sicobo.model.BeanUser;
-
-import java.util.List;
+import org.springframework.http.ResponseEntity;
 
 public interface IUserService {
-    public List<BeanUser> listar();
+    public ResponseEntity<Object> listar();
 
-    public void guardar(DTOUser dtoUser);
+    public ResponseEntity<Object> guardar(DTOUser dtoUser);
 
-    public void eliminar(BeanUser beanUser);
+    public ResponseEntity<Object> editar(DTOUser dtoUser);
 
-    public BeanUser encontrarPersona(BeanUser beanUser);
+    public ResponseEntity<Object> eliminar(BeanUser beanUser);
+
+    public ResponseEntity<Object> buscar(Long id);
 }

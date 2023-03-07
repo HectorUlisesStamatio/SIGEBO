@@ -2,15 +2,17 @@ package com.sicobo.sicobo.service;
 
 import com.sicobo.sicobo.dto.DTOPayment;
 import com.sicobo.sicobo.model.BeanPayment;
+import org.springframework.http.ResponseEntity;
 
-import java.util.List;
 
 public interface IPaymentService {
-    public List<BeanPayment> listar();
+    public ResponseEntity<Object> listar();
 
-    public void guardar(DTOPayment dtoPayment);
+    public ResponseEntity<Object> guardar(DTOPayment dtoPayment);
 
-    public void eliminar(BeanPayment beanPayment);
+    public ResponseEntity<Object> editar(DTOPayment dtoPayment);
 
-    public BeanPayment encontrarPersona(BeanPayment beanPayment);
+    public ResponseEntity<Object> eliminar(BeanPayment beanPayment);
+
+    public ResponseEntity<Object> buscar(Long id);
 }

@@ -4,11 +4,14 @@ import com.sicobo.sicobo.dao.DaoCostType;
 import com.sicobo.sicobo.dto.DTOCostType;
 import com.sicobo.sicobo.model.BeanCostType;
 import com.sicobo.sicobo.service.ICostTypeService;
-import jakarta.persistence.EntityNotFoundException;
+import com.sicobo.sicobo.util.Message;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.transaction.annotation.Transactional;
 
-import java.util.List;
+import java.sql.SQLException;
+import java.util.Optional;
 
 public class CostTypeServiceImpl implements ICostTypeService {
 
@@ -17,26 +20,36 @@ public class CostTypeServiceImpl implements ICostTypeService {
 
     @Override
     @Transactional(readOnly = true)
-    public List<BeanCostType> listar() {
-        return daoCostType.findAll();
+    public ResponseEntity<Object> listar() {
+        return new ResponseEntity(new Message("Usuario registrado","HOLA", "success",200, daoCostType.findAll()), HttpStatus.OK);
     }
 
     @Override
-    @Transactional
-    public void guardar(DTOCostType dtoCostType) {
+    @Transactional(rollbackFor = {SQLException.class})
+    public ResponseEntity<Object> guardar(DTOCostType dtoCostType) {
         BeanCostType a = new BeanCostType();
-         daoCostType.save(a);
+        return new ResponseEntity(new Message("Usuario registrado","HOLA", "success",200,daoCostType.save(a)), HttpStatus.OK);
     }
 
     @Override
-    @Transactional
-    public void eliminar(BeanCostType beanCostType) {
-            daoCostType.delete(beanCostType);
+    @Transactional(rollbackFor = {SQLException.class})
+    public ResponseEntity<Object> editar(DTOCostType dtoCostType) {
+        BeanCostType a = new BeanCostType();
+        return new ResponseEntity(new Message("Usuario registrado","HOLA", "success",200,daoCostType.save(a)), HttpStatus.OK);
+    }
+
+    @Override
+    @Transactional(rollbackFor = {SQLException.class})
+    public ResponseEntity<Object> eliminar(BeanCostType beanCostType) {
+        return new ResponseEntity(new Message("Usuario registrado","HOLA", "success",200,daoCostType.save(beanCostType)), HttpStatus.OK);
     }
 
     @Override
     @Transactional(readOnly = true)
-    public BeanCostType encontrarPersona(BeanCostType beanCostType) {
-        return daoCostType.findById(beanCostType.getId()).orElseThrow(EntityNotFoundException::new);
+    public ResponseEntity<Object> buscar(Long id) {
+        Optional<BeanCostType> optionalBeanCostType = daoCostType.findById(id);
+        return new ResponseEntity(new Message("Usuario registrado","HOLA", "success",200,optionalBeanCostType), HttpStatus.OK);
     }
+
+
 }

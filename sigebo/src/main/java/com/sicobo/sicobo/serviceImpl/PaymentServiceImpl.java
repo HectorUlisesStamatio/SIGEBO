@@ -10,33 +10,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
-public class PaymentServiceImpl implements IPaymentService {
+public class PaymentServiceImpl   {
 
-    @Autowired
-    private DaoPayment daoPayment;
 
-    @Override
-    @Transactional(readOnly = true)
-    public List<BeanPayment> listar() {
-        return daoPayment.findAll();
-    }
-
-    @Override
-    @Transactional
-    public void guardar(DTOPayment dtoPayment) {
-        BeanPayment b = new BeanPayment();
-        daoPayment.save(b);
-    }
-
-    @Override
-    @Transactional
-    public void eliminar(BeanPayment beanPayment) {
-        daoPayment.delete(beanPayment);
-    }
-
-    @Override
-    @Transactional(readOnly = true)
-    public BeanPayment encontrarPersona(BeanPayment beanPayment) {
-        return daoPayment.findById(beanPayment.getId()).orElseThrow(EntityNotFoundException::new);
-    }
 }
