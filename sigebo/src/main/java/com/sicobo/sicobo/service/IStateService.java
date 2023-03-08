@@ -4,7 +4,6 @@ import com.sicobo.sicobo.dto.DTOState;
 import com.sicobo.sicobo.model.BeanState;
 import org.springframework.http.ResponseEntity;
 
-import java.util.List;
 
 public interface IStateService {
     public ResponseEntity<Object> listar();

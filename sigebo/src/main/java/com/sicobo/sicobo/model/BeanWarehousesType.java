@@ -16,10 +16,10 @@ public class BeanWarehousesType {
 
     private String description;
 
-/*
-    @OneToOne(mappedBy = "warehouses_type")
+
+    @OneToOne(mappedBy = "beanWarehousesType")
     private BeanCostType beanCostType;
-*/
+
     private LocalDateTime fechaCreacion;
 
     @Column(name = "fecha_act")

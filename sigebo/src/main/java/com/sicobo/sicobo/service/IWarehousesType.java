@@ -1,8 +1,6 @@
 package com.sicobo.sicobo.service;
 
-import com.sicobo.sicobo.dto.DTOWarehouse;
 import com.sicobo.sicobo.dto.DTOWarehousesType;
-import com.sicobo.sicobo.model.BeanWarehouse;
 import com.sicobo.sicobo.model.BeanWarehousesType;
 import org.springframework.http.ResponseEntity;
 

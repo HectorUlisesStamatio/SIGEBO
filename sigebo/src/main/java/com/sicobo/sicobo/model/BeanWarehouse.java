@@ -21,6 +21,7 @@ public class BeanWarehouse {
 
     private Double finalCost;
 
+    @Column(columnDefinition = "boolean default true")
     private boolean status;
 
     @ManyToOne(fetch = FetchType.LAZY)

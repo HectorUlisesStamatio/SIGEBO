@@ -2,11 +2,13 @@ package com.sicobo.sicobo.model;
 
 import jakarta.persistence.*;
 import lombok.Data;
+import org.hibernate.validator.constraints.Length;
 
 import java.time.LocalDateTime;
 
 @Data
 @Entity
+@Table(name = "user")
 public class BeanUser {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -20,12 +22,15 @@ public class BeanUser {
 
     private String email;
 
+    @Column(length = 13)
     private String rfc;
 
+    @Column(length = 15)
     private String phone_number;
 
     private String username;
 
+    @Length(min = 12)
     private String password;
 
     @Enumerated(EnumType.STRING)
@@ -35,7 +40,11 @@ public class BeanUser {
 
     private boolean policy_acceptance;
 
+    @Column(columnDefinition = "boolean default true")
     private boolean status;
+
+    @OneToOne(mappedBy = "beanUser")
+    private BeanSiteAssigment beanSiteAssigment;
 
 
     private LocalDateTime fechaCreacion;

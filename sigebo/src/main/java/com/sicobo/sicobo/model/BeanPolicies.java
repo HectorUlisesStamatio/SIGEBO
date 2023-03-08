@@ -7,6 +7,7 @@ import java.time.LocalDateTime;
 
 @Data
 @Entity
+@Table(name = "policies")
 public class BeanPolicies {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -14,6 +15,7 @@ public class BeanPolicies {
 
     private String description;
 
+    @Column(columnDefinition = "boolean default true")
     private boolean status;
 
     private LocalDateTime fechaCreacion;

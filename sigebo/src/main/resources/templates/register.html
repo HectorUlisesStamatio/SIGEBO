@@ -43,7 +43,7 @@
 
                                     <div class="col-12">
                                         <label for="password" class="form-label">Contraseña</label>
-                                        <input type="password" name="password" class="form-control" id="password" pattern="^(?=^.{12,}$)(?=.*\d)(?=.*[!@#$%^&*]+)(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$" required>
+                                        <input type="password" name="password" class="form-control" id="password" pattern="^(?=^.{12,}$)(?=.*\d)(?=.*[!@#$%^&*]+)(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$" minlength="12" required>
                                         <div th:text="#{register.password.error}" class="invalid-feedback"></div>
                                         <div th:text="#{register.password.error.hint}" class="invalid-feedback"></div>
                                     </div>

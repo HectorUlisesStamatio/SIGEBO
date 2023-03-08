@@ -4,7 +4,6 @@ import com.sicobo.sicobo.dto.DTOSite;
 import com.sicobo.sicobo.model.BeanSite;
 import org.springframework.http.ResponseEntity;
 
-import java.util.List;
 
 public interface ISiteService {
     public ResponseEntity<Object> listar();

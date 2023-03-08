@@ -8,6 +8,7 @@ import java.time.LocalDateTime;
 
 @Data
 @Entity
+@Table(name = "state")
 public class BeanState {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

@@ -11,18 +11,18 @@ import java.time.LocalDateTime;
 public class BeanCostType {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id")
     private Long id;
 
     private Double amount;
 
+    @Column(columnDefinition = "boolean default true")
     private boolean status;
 
-/*
+
     @OneToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "warehouses_type_id", referencedColumnName = "id")
+    @JoinColumn(name = "warehouses_type_id")
     private BeanWarehousesType beanWarehousesType;
-*/
+
 
     private LocalDateTime fechaCreacion;
 

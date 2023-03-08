@@ -1,9 +1,7 @@
 package com.sicobo.sicobo.service;
 
 import com.sicobo.sicobo.dto.DTOWarehouse;
-import com.sicobo.sicobo.dto.DTOWarehouseImage;
 import com.sicobo.sicobo.model.BeanWarehouse;
-import com.sicobo.sicobo.model.BeanWarehouseImage;
 import org.springframework.http.ResponseEntity;
 
 import java.util.List;

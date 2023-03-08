@@ -13,6 +13,7 @@ public class Message {
     private String message;
     @NonNull
     private String type;
+
     private int code;
     private Object result;
 }
