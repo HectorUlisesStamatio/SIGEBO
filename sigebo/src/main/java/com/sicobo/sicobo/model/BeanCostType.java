@@ -1,6 +1,7 @@
 package com.sicobo.sicobo.model;
 
 import jakarta.persistence.*;
+import jakarta.validation.constraints.Size;
 import lombok.Data;
 
 import java.time.LocalDateTime;
@@ -15,8 +16,8 @@ public class BeanCostType {
 
     private Double amount;
 
-    @Column(columnDefinition = "boolean default true")
-    private boolean status;
+    @Column(columnDefinition = "integer default 1")
+    private int status;
 
 
     @OneToOne(cascade = CascadeType.ALL)

@@ -6,34 +6,38 @@ import org.springframework.web.bind.annotation.GetMapping;
 
 @Controller
 public class PruebasController {
-    @GetMapping("/")
-    public String index(){
-        return "index";
-    }
+
     @GetMapping("/dash")
     public String dash(Model model){
-        String pagina = "Dashboard";
-        model.addAttribute("Pagina",pagina);
         return "adminViews/dashboard";
     }
     @GetMapping("/login")
     public String login(Model model){
-        String pagina = "Inicio";
-        model.addAttribute("Pagina",pagina);
         return "login";
     }
 
     @GetMapping("/register")
     public String register(Model model){
-        String pagina = "Registro";
-        model.addAttribute("Pagina",pagina);
         return "register";
     }
 
     @GetMapping("/blanco")
     public String blanco(Model model){
-        String pagina = "Ejemplo";
-        model.addAttribute("Pagina",pagina);
+        return "paginaEnBlanco";
+    }
+
+    @GetMapping("/bodegas/blanco")
+    public String bblanco(Model model){
+        return "paginaEnBlanco";
+    }
+
+    @GetMapping("/gestor/blanco")
+    public String gblanco(Model model){
+        return "paginaEnBlanco";
+    }
+
+    @GetMapping("/admin/blanco")
+    public String ablanco(Model model){
         return "paginaEnBlanco";
     }
 }

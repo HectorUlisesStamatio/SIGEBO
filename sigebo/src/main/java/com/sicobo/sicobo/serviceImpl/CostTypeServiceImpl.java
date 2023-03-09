@@ -5,6 +5,7 @@ import com.sicobo.sicobo.dto.DTOCostType;
 import com.sicobo.sicobo.model.BeanCostType;
 import com.sicobo.sicobo.service.ICostTypeService;
 import com.sicobo.sicobo.util.Message;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -15,6 +16,7 @@ import java.sql.SQLException;
 import java.util.Optional;
 
 @Service
+@Slf4j
 public class CostTypeServiceImpl implements ICostTypeService {
 
     @Autowired

@@ -1,6 +1,7 @@
 package com.sicobo.sicobo.model;
 
 import jakarta.persistence.*;
+import jakarta.validation.constraints.Size;
 import lombok.Data;
 import org.hibernate.validator.constraints.Length;
 
@@ -38,10 +39,11 @@ public class BeanUser {
 
     private int number_attempts;
 
-    private boolean policy_acceptance;
+    @Column(columnDefinition = "integer default 1")
+    private int policy_acceptance;
 
-    @Column(columnDefinition = "boolean default true")
-    private boolean status;
+    @Column(columnDefinition = "integer default 1")
+    private int status;
 
     @OneToOne(mappedBy = "beanUser")
     private BeanSiteAssigment beanSiteAssigment;

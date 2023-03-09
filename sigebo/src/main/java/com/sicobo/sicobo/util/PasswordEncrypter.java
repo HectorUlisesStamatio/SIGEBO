@@ -1,18 +1,17 @@
 package com.sicobo.sicobo.util;
 
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+
 public class PasswordEncrypter {
-    /* Para testear el cifrado
        public static void main(String[] args) {
 
-        var password = "dsadasd21sadSASas!";
+        var password = "asadaASDFGFas!23";
         System.out.println("password: " + password);
         System.out.println("password encriptado:" + encriptarPassword(password));
     }
-    */
-    /* todo Poner dependencia para el cifrado
+
     public static String encriptarPassword(String password){
         BCryptPasswordEncoder encoder = new BCryptPasswordEncoder();
         return encoder.encode(password);
     }
-    */
 }

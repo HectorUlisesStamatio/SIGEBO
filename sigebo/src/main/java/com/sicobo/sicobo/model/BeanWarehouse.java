@@ -21,8 +21,8 @@ public class BeanWarehouse {
 
     private Double finalCost;
 
-    @Column(columnDefinition = "boolean default true")
-    private boolean status;
+    @Column(columnDefinition = "integer default 1")
+    private int status;
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JsonIgnoreProperties({"hibernateLazyInitializer","handler"})

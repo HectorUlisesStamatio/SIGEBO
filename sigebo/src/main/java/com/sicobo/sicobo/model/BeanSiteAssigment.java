@@ -19,7 +19,8 @@ public class BeanSiteAssigment {
     @JoinColumn(name = "site_id")
     private BeanSite beanSite;
 
-    @Column(columnDefinition = "boolean default true")
-    private boolean status;
+
+    @Column(columnDefinition = "integer default 1")
+    private int status;
 
 }

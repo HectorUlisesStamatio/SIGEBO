@@ -49,10 +49,12 @@
                     </li>
 
                     <li>
-                        <a class="dropdown-item d-flex align-items-center" href="#">
-                            <i class="bi bi-box-arrow-right"></i>
-                            <span>Cerrar Sesión</span>
-                        </a>
+                        <form th:action="@{/logout}" method="post">
+                            <a class="dropdown-item d-flex align-items-center" href="#">
+                                <button style="border: none; background: none; text-decoration: none;" type="submit"><i class="bi bi-box-arrow-right"></i><span>Cerrar Sesión</span></button>
+                            </a>
+                        </form>
+
                     </li>
 
                 </ul>
