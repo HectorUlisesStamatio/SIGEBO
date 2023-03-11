@@ -19,7 +19,7 @@ public class WebSecurityConfig {
             request.requestMatchers("/", "/home","/index").permitAll();
             request.requestMatchers("/css/**", "/js/**", "/img/**", "/scss/**", "/vendor/**").permitAll();
 
-            //request.requestMatchers("/bodegas/**").hasAnyRole("USUARIO");
+            //request.requestMatchers("/usuario/**").hasAnyRole("USUARIO");
             //request.requestMatchers("/gestor/**").hasAnyRole("GESTOR");
             //request.requestMatchers("/admin/**").hasAnyRole("ADMIN");
             //request.anyRequest().authenticated();
